@@ -13,6 +13,8 @@ import com.pi4j.io.gpio.GpioController;
 public class ControlOneMotorDirection {
 
     public static void main(String[] args) throws InterruptedException {
+        var pi4j = Pi4J.newAutoContext();
+
                 //Initzalize the joystick component
         final var joystick = new Joystick(pi4j, 5,6,13,19,26);
 
@@ -34,7 +36,7 @@ public class ControlOneMotorDirection {
 
         // Wait for 15 seconds while handling events before exiting
         System.out.println("Press the button to see it in action!");
-        sleep(15000);
+        //sleep(15000);
 
         // Unregister all event handlers to exit this application in a clean way
         joystick.buttonUpOnDown(null);
